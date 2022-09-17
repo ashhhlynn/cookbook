@@ -20,6 +20,7 @@ redirect_to recipe_path(@recipe)
 else 
 render :new
 end 
+end 
 
 def edit 
 @recipe = Recipe.find(params[:id])
@@ -32,6 +33,7 @@ if @recipe.update(recipe_params)
 redirect_to recipe_path(@recipe)
 else 
 render :edit 
+end 
 end 
 
 def destroy 

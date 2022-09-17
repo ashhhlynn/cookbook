@@ -11,9 +11,12 @@ Rails.application.routes.draw do
 
   resources :users 
   resources :recipes 
-  resources :reviews 
   resources :ingredients 
   resources :recipe_ingredients 
+
+  resources :recipes, only: [:index] do
+    resources :reviews, only: [:index, :new, :create]
+  end
 
 
 end
