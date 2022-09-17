@@ -10,10 +10,11 @@ end
 
 def new 
 @recipe = Recipe.new
+10.times { @recipe.recipe_ingredients.build.build_ingredient } 
 end 
 
 def create
-@recipe = Recipe.new(recipe_params)
+@recipe = @user.recipes.build(recipe_params)
 @recipe.save
 redirect_to recipe_path(@recipe)
 end 
