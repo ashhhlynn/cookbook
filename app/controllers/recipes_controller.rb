@@ -21,6 +21,7 @@ end
 
 def edit 
 @recipe = Recipe.find(params[:id])
+10.times { @recipe.recipe_ingredients.build.build_ingredient}
 end 
 
 def update 
