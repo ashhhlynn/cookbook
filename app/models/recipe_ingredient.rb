@@ -4,7 +4,7 @@ class RecipeIngredient < ApplicationRecord
 
 def ingredient_attributes=(ingredient_attributes)
        ingredient_attributes.values.each do |ia|
-       ingredient = Ingredient.find_or_create_by(ingredient_attribute)
+       ingredient = Ingredient.find_or_create_by(name: ia.downcase)
         self.ingredient = ingredient 
         end
 end

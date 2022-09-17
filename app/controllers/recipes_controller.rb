@@ -14,8 +14,8 @@ def new
 end 
 
 def create
-@recipe = @user.recipes.build(recipe_params)
-@recipe.save
+@recipe = current_user.recipes.build(recipe_params)
+@recipe.save 
 redirect_to recipe_path(@recipe)
 end 
 
@@ -37,11 +37,10 @@ redirect_to recipes_path
 end 
 
 
-
 private 
 def recipe_params
 params.require(:recipe).permit(:name, :description, :image_url, :user_id, recipe_ingredients_attributes: 
-[:quantity, ingredient_attributes: [:name]])
+[:quantity, :id, ingredient_attributes: [:name]])
 end 
 
 
