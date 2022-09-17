@@ -15,8 +15,10 @@ end
 
 def create
 @recipe = current_user.recipes.build(recipe_params)
-@recipe.save 
+if @recipe.save 
 redirect_to recipe_path(@recipe)
+else 
+render :new
 end 
 
 def edit 
@@ -26,8 +28,10 @@ end
 
 def update 
 @recipe = Recipe.find(params[:id])
-@recipe.update(recipe_params)
+if @recipe.update(recipe_params)
 redirect_to recipe_path(@recipe)
+else 
+render :edit 
 end 
 
 def destroy 
