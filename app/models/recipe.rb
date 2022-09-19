@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
     validates :name, length: { maximum: 50 }
     validates :name, presence: true 
     validates :description, presence: true 
+    validates :description, length: { maximum: 500 }
     validates :recipe_ingredients, presence: true
     validates :image_url, presence: true
     validates :image_url, format: {with: /\.(png|jpg)\Z/i}
