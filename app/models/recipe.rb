@@ -11,6 +11,6 @@ class Recipe < ApplicationRecord
     validates :image_url, presence: true
     validates :image_url, format: {with: /\.(png|jpg)\Z/i}
 
-    accepts_nested_attributes_for :recipe_ingredients, :reject_if => proc { |attrs| attrs[:quantity].blank? || attrs[:ingredient_attributes][:name].blank?} 
-
+    accepts_nested_attributes_for :recipe_ingredients, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:quantity].blank? || attrs[:ingredient_attributes][:name].blank?} 
+    default_scope { order('recipes.name ASC') } 
 end 
