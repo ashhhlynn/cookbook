@@ -1,0 +1,6 @@
+<h1>All Users </h1>
+<% @users.each do |user| %>
+    <h2><%= link_to user.username, user_path(user) %></h2>
+    <h3>Member since <%= user.created_at.strftime("%m-%d-%y")%></h3>
+    <h3><%= user.recipes.count %> recipes, <%= user.reviews.count %> reviews</h3>
+    <% end %>

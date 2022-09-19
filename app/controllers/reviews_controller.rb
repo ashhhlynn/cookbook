@@ -21,10 +21,12 @@ redirect_to root_path
 end 
     
 def edit
+@recipe = Recipe.find(params[:recipe_id])
 @review = Review.find(params[:id])
 end 
         
 def update
+@recipe = Recipe.find(params[:recipe_id])
 @review = Review.find(params[:id])
 if @review.update(review_params)
 redirect_to recipes_path
@@ -34,6 +36,7 @@ end
 end 
     
 def destroy 
+@recipe = Recipe.find(params[:recipe_id])
 @review = Review.find(params[:id])
 @review.destroy
 redirect_to recipe_path(@recipe)

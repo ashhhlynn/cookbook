@@ -18,6 +18,7 @@ if @user.save
 session[:user_id] = @user.id
 redirect_to user_path(@user)
 end 
+end 
 
 
 private 

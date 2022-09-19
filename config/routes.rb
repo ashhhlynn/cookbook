@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :recipe_ingredients 
 
   resources :recipes, only: [:index] do
-    resources :reviews, only: [:index, :new, :create]
+    resources :reviews, only: [:index, :new, :create, :edit, :update, :show, :destroy]
   end
 
 

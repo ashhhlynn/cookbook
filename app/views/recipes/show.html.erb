@@ -1,0 +1,13 @@
+<h1><%= @recipe.name.titleize %> </h1>
+ <img src= "<%= @recipe.image_url %>" height ="600" width = "400"><br>
+ <h3>Recipe By <%= link_to @recipe.user.username, user_path(@recipe.user) %>
+ <%= @recipe.created_at.strftime("%m-%d-%y") %></h3>
+ <h3><%= link_to @recipe.reviews.count, recipe_reviews_path(@recipe) %> Reviews </h3>
+ <p>Desciption: <%= @recipe.description %></p>
+ <p>Ingredients:</p>
+ <% @recipe.recipe_ingredients.each do |ri| %>
+     <p><li>
+     <%= ri.quantity.titleize %>
+     <%= ri.ingredient.name.titleize %>
+     <% end %>
+     </li></p>
