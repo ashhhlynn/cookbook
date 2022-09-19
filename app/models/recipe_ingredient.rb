@@ -3,9 +3,12 @@ class RecipeIngredient < ApplicationRecord
     belongs_to :ingredient 
 
     validates :quantity, presence: true
-    validates(:quantity, { :length => { :maximum => 40 } })
     validates :recipe, presence: true 
     validates :ingredient, presence: true 
+    validates :quantity, length: { maximum: 50 }
+
+    accepts_nested_attributes_for :ingredient, :allow_destroy => true 
+
 
 def ingredient_attributes=(ingredient_attributes)
        ingredient_attributes.values.each do |ia|

@@ -3,9 +3,8 @@ class Recipe < ApplicationRecord
     has_many :reviews, dependent: :destroy
     has_many :recipe_ingredients, dependent: :destroy
     has_many :ingredients, through: :recipe_ingredients
-
+    validates :name, length: { maximum: 50 }
     validates :name, presence: true 
-    validates(:name, { :length => { :maximum => 100 } })
     validates :description, presence: true 
     validates :recipe_ingredients, presence: true
     validates :image_url, presence: true

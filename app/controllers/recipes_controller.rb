@@ -32,6 +32,7 @@ def update
 if @recipe.update(recipe_params)
 redirect_to recipe_path(@recipe)
 else 
+10.times { @recipe.recipe_ingredients.build.build_ingredient}
 render :edit 
 end 
 end 
