@@ -11,6 +11,26 @@
   </head>
 
   <body>
-    <%= yield %>
+  <%= yield %>
+
+<footer class="footer">
+<nav>
+<ul>
+<%= link_to "Home", root_path %> 
+<%= link_to "All Recipes", recipes_path %> 
+<%= link_to "All Users", users_path %>
+
+
+<%= link_to "Sign Up", new_user_path %>
+<%= link_to "Login", login_path %>
+
+<%= link_to "Add Recipe", new_recipe_path %>
+<%= link_to "Your Page", user_path(current_user) %>
+<%= link_to "Log Out", logout_path, method: "post" %>
+
+</ul>
+</nav>
+</footer>
+
   </body>
 </html>

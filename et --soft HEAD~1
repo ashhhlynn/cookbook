@@ -1,0 +1,131 @@
+[33mcommit 1a038c21c4742e5e51db48800ad56986e7cba8c3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Mon Sep 19 02:47:56 2022 -0500
+
+    edited user index and show pages
+
+[33mcommit 833e0dc59e8e85a63fd2322047e4252d67c44008[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Mon Sep 19 02:32:12 2022 -0500
+
+    edited recipe index and show pages
+
+[33mcommit 8987473a6a8f51ae474c5bf97fd38a6ef189f8a7[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Mon Sep 19 02:15:17 2022 -0500
+
+    added show, edit, and update under reviews resources under recipes, modified edit method in reviews controller, made edit review form, rendered partial for edit and new, added destroy to nested reosurces reviews route, added a little data to recipe index and show pages, small changes to reviews forms
+
+[33mcommit cb284639956626727982e97a098d33b9bb42d2a2[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Sat Sep 17 00:34:30 2022 -0500
+
+    added nested resources reviews under recipes, modified methods in reviews controller to link it with recipes, added if else redirect_to statements to reviews methods, made new review form, took out reviews resources
+
+[33mcommit 431cde0ef668e89e142f120a600cd90e12aee44d[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 23:53:31 2022 -0500
+
+    added if save render new and if update render edit to create and update methods in recipe controller
+
+[33mcommit 7a38196b125d6f74d9a7d89d9324ae0b727273c0[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 23:48:00 2022 -0500
+
+    added a reject if attributes ingredient or quantity attribute is blank to accepts recipe ingredients nested attributes to controller
+
+[33mcommit 491708b18c07567923560e081e96fa6eba3ea3af[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 23:39:56 2022 -0500
+
+    modified login form, made destroy session method, added get and post logout routes to routes
+
+[33mcommit f4b01887b4fcdad9454fba1e6303113da2085ad0[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 23:34:50 2022 -0500
+
+    modified form partial for recipe, added current user method to app controller (helper method), added new and create sessions for sessions controller, modified create method in recipe controller, put get and post login routes in routes, modified ingredient attributes method in recipe ingredient model, modified create user method, new session login form
+
+[33mcommit 15abd8e65bdc4f8ace7efb1aeed5a6987a14dbb6[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 22:54:02 2022 -0500
+
+    modified edit in recipes controller
+
+[33mcommit 48e24b7e186dda41c4bd4638083dc9cab1a7d35b[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 22:52:06 2022 -0500
+
+    added a ingredient attributes method to recipe_ingredient model to find or create new ingredients and set it equal to a recipe ingredients ingredient, and modified new and create methods in recipe controller
+
+[33mcommit a5beb11e672fb073dc1eb0add135b1883a008e32[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 22:36:20 2022 -0500
+
+    added recipe ingredient attributes and ingredient attributes to recipes controller, added accepts nested attributes for recipe ingredients to recipe model
+
+[33mcommit 53fa9b34e4b2fa61fbc14a1907ab3a5e6577f7a4[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 22:27:16 2022 -0500
+
+    made a change to edit recipe form
+
+[33mcommit 2502d41073bce94c188529b2d0a74dfa73b313e7[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Fri Sep 16 22:25:23 2022 -0500
+
+    added partial form, new and edit for recipe
+
+[33mcommit eeac59f09c6e2e7702137c8c6650777f6351646e[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 21:40:52 2022 -0500
+
+    same thing for reviews controller
+
+[33mcommit bd7a57e660eba45d3e4577741437fa8758c634c9[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 21:35:09 2022 -0500
+
+    setup recipe controller methods for index, show, new, create, edit, update, destroy, params
+
+[33mcommit 88d62b84c13ff86cb084ba56c7ac025e2745ced6[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 21:24:02 2022 -0500
+
+    made new user form
+
+[33mcommit 119b6b452354202b6c5fb45f622a6b5cab6f5d6d[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 21:11:41 2022 -0500
+
+    added basic index, new, create, show methods and user params to users controller
+
+[33mcommit 902a060b2879591ca52f88503a2a4b354e70fc53[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 20:58:45 2022 -0500
+
+    added homepage view, added user views, set up root in routes, set up resources in routes for users, recipes, reviews, ingredients, and recipe_ingredients
+
+[33mcommit 397ef136ac981ded266746d0c5ee382072364b71[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 20:46:55 2022 -0500
+
+    set up controllers
+
+[33mcommit 90072dd390ac35ea0a840c7739dc91bccbdb1062[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 20:42:11 2022 -0500
+
+    added tables and migrations
+
+[33mcommit bccd26e32b7db8db5718ff96bad9de19ee6a9525[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 20:36:31 2022 -0500
+
+    added models and relationships
+
+[33mcommit 0e213f250fb9b0c630a8db0f15af8a7de72588c1[m
+Author: ashhhlynn <ashleylynnwelch@gmail.com>
+Date:   Thu Sep 15 20:19:32 2022 -0500
+
+    Init
