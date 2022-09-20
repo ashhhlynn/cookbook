@@ -13,4 +13,10 @@ class Recipe < ApplicationRecord
 
     accepts_nested_attributes_for :recipe_ingredients, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:quantity].blank? || attrs[:ingredient_attributes][:name].blank?} 
     default_scope { order('recipes.name ASC') } 
+
+    def self.by_user(user_id)
+        where(user: user_id)
+    end 
+
+
 end 

@@ -5,7 +5,19 @@ skip_before_action :require_login, only: [:index, :show]
 before_action :user_ownership, only: [:edit, :destroy]
 
 def index 
+@users = User.all
+@ingredients = Ingredient.all 
+if !params[:user].blank?
+@recipes = Recipe.by_user(params[:user])
+elsif !params[:ingredient].blank?     
+    @recipes = []
+    @ingredient = Ingredient.find(params[:ingredient])
+    @ingredient.recipe_ingredients.each do |ri|
+            @recipes << ri.recipe 
+    end 
+else
 @recipes = Recipe.all
+end 
 end 
 
 def show
