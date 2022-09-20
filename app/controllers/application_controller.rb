@@ -5,7 +5,6 @@ helper_method :require_login
 helper_method :user_ownership
 helper_method :user_review_ownership
 
-
 def index 
 end 
 
