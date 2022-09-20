@@ -23,11 +23,11 @@
     <%= f.fields_for :recipe_ingredients do |ri| %>
       <%= ri.label :quantity %>
       <%= ri.text_field :quantity %>
-      <%= ri.check_box :_destroy  %>
+      Remove<%= ri.check_box :_destroy  %>
       <%= ri.fields_for :ingredient do |i| %>
         <%= i.label :ingredient %>
         <%= i.text_field :name %>
-        <% end %>
+        <% end %><br>
         <% end %>
     <%= f.submit %>
   <% end %>

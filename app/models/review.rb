@@ -7,4 +7,6 @@ class Review < ApplicationRecord
     validates :user_id, presence: true
     validates :recipe_id, presence: true
 
+    default_scope lambda {order("updated_at desc")} 
+
 end 

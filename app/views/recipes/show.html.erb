@@ -3,7 +3,7 @@
 <h3><%= link_to "Edit Recipe", edit_recipe_path %> </h3>
 <% end %>
 
- <img src= "<%= @recipe.image_url %>" height ="600" width = "400"><br>
+ <img src= "<%= @recipe.image_url %>"<br>
  <h3>Recipe By <%= link_to @recipe.user.username, user_path(@recipe.user) %>
  <%= @recipe.created_at.strftime("%m-%d-%y") %></h3>
  <h3><%= link_to @recipe.reviews.count, recipe_reviews_path(@recipe) %> Reviews </h3>
