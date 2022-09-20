@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
 before_action :require_login
 skip_before_action :require_login, only: [:index, :show]
+before_action :user_review_ownership, only: [:edit, :destroy]
 
 def index
 @recipe = Recipe.find(params[:recipe_id])
