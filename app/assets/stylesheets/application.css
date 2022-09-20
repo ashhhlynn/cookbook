@@ -13,3 +13,105 @@
  *= require_tree .
  *= require_self
  */
+
+ footer {
+    float: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(129, 126, 126, 0.231);
+    text-align: center;
+  }
+
+  footer a {
+    color: rgb(60, 43, 101);
+    font-size: 1.2em;
+  }
+
+  .center h1 {
+    margin-bottom: 10px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: normal;
+    float: center;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 2em;
+    color: #777;
+  }
+  
+  h3 {
+    font-size: 1.2em;
+    color: #777;
+  }
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+  }
+  
+  img {  
+    display: block;  
+    margin-left: auto;  
+    margin-right: auto;  
+    margin-bottom: 0px;
+    border: 3px ridge rgb(4, 4, 15);  
+    padding: 1px; 
+    height: 600px;
+    width: 400px;
+    }  
+
+  form {
+    font-size: 1.2em;
+    line-height: 1.3em;
+    }
+
+    .header {
+        text-align: center;
+        background-color: rgba(129, 126, 126, 0.231);
+        color: black;
+        font-size: 2.5em;
+        }
+
+    .header img {
+        height: auto;
+        width: auto;
+        position: center;
+            }
+
+    body {
+        padding-top: 50px;
+             }
+              
+    section {
+        overflow: auto;
+            }
+              
+    textarea {
+        resize: vertical;
+            }
+
+    input[type = submit]
+    {
+        background-color: #59286A;
+        color: white;
+        padding: 5px 20px;
+        margin: 3px 3px;
+        cursor: pointer;
+        font-size: .8em;
+        line-height: 1.3em;
+        } 
