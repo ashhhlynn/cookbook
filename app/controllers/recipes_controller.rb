@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
 before_action :require_login
 skip_before_action :require_login, only: [:index, :show]
+before_action :user_ownership, only: [:edit, :destroy]
 
 def index 
 @recipes = Recipe.all
