@@ -3,7 +3,7 @@ class Review < ApplicationRecord
     belongs_to :recipe 
 
     validates :text, presence: true 
-    validates(:text, { :length => { :maximum => 40 } })
+    validates(:text, { :length => { :maximum => 500 } })
     validates :user_id, presence: true
     validates :recipe_id, presence: true
 
