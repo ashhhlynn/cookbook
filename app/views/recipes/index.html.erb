@@ -7,6 +7,16 @@
 <%= select_tag "ingredient", options_from_collection_for_select(@ingredients, "id", "name"), include_blank: true %>
 <%= submit_tag "Filter by Ingredient" %>
 <% end %>
+
+<%= form_tag("/recipes", method: "get") do  %>
+    <%= radio_button :recency, "recency", include_blank: true  %>
+    <label for="recency">Most Recent</label>
+    <%= radio_button :ingredients_count, "ingredients_count", include_blank: true  %>
+    <label for="ingredients_count">Lowest Number of Ingredients</label>
+    <%= radio_button :reviews_count, "reviews_count", include_blank: true  %>
+    <label for="reviews_count">Most Reviewed</label>
+    <%= submit_tag 'Sort' %>
+    <% end %>
  
 <% @recipes.each do |r| %>
 <h2><%= link_to r.name.titleize, recipe_path(r) %></h2>

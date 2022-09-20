@@ -15,6 +15,12 @@ elsif !params[:ingredient].blank?
     @ingredient.recipe_ingredients.each do |ri|
             @recipes << ri.recipe 
     end 
+elsif !params[:recency].blank?
+@recipes = Recipe.most_recent
+elsif !params[:reviews_count].blank?
+@recipes = Recipe.reviews_count
+elsif !params[:ingredients_count].blank?
+@recipes = Recipe.ingredients_count
 else
 @recipes = Recipe.all
 end 

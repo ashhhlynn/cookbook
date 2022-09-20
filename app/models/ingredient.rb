@@ -5,4 +5,6 @@ class Ingredient < ApplicationRecord
     validates :name, presence: true
     validates :name, length: { maximum: 50 }
 
+    default_scope { order('name ASC') } 
+
 end 
