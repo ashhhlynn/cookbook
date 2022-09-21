@@ -8,13 +8,12 @@
 <% end %>
 
 <h2>Reviews:</h2>
-<p>
+
 <% if @user.reviews.any? %>
 <% @user.reviews.each do |rev| %>
-<%= link_to rev.recipe.name, recipe_path(rev.recipe)%> <%= rev.created_at.strftime("%m-%d-%y")%>
-<br> <%= rev.text %>
+<h3><%= link_to rev.recipe.name, recipe_path(rev.recipe)%> <%= rev.created_at.strftime("%m-%d-%y")%><h3>
+<h3> <%= rev.text %><h3>
 <% end %> 
 <% else %>
- 0 Reviews 
+<h3> 0 Reviews </h3>
 <% end %> 
-</p>

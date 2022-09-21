@@ -2,6 +2,8 @@
 
 <%= form_tag("/recipes", method: "get") do %>
 <%= select_tag "user", options_from_collection_for_select(@users, "id", "username"), include_blank: true %>
+<%= select_tag "ingredient", options_from_collection_for_select(@ingredients, "id", "name"), include_blank: true %>
+
 <%= submit_tag "Filter by User" %>
 <% end %>
 
