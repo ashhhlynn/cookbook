@@ -1,10 +1,10 @@
 <h1> <%= @user.username %>'s Recipes</h1>
 <% @user.recipes.each do |rec| %>
-<h2> <%= link_to rec.name.titleize, recipe_path(rec) %> </h2>
+<h2> <%= link_to rec.name, recipe_path(rec) %> </h2>
 <img src= "<%= rec.image_url %>">
 <% end %>
 <% if @user.recipes.none? %>
-0 Recipes 
+<p>0 Recipes</p>
 <% end %>
 
 <h2>Reviews:</h2>

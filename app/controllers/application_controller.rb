@@ -6,6 +6,7 @@ helper_method :user_ownership
 helper_method :user_review_ownership
 helper_method :recipe_owned
 
+
 def index 
 end 
 
@@ -28,6 +29,7 @@ def recipe_owned
     @recipe = Recipe.find_by(id: params[:id])
     @recipe.user == current_user 
 end 
+
 
 def user_review_ownership
 @review = Review.find_by(id: params[:id])

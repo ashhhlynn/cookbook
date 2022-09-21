@@ -1,3 +1,5 @@
+<h1>All Recipes </h1>
+
 <%= form_tag("/recipes", method: "get") do %>
 <%= select_tag "user", options_from_collection_for_select(@users, "id", "username"), include_blank: true %>
 <%= submit_tag "Filter by User" %>
@@ -19,7 +21,7 @@
     <% end %>
  
 <% @recipes.each do |r| %>
-<h2><%= link_to r.name.titleize, recipe_path(r) %></h2>
+<h2><%= link_to r.name, recipe_path(r) %></h2>
 <img src= "<%= r.image_url %>"><br>
 <h3>Recipe By  <%= link_to r.user.username, user_path(r.user) %>
 <%= r.created_at.strftime("%m-%d-%y") %></h3>

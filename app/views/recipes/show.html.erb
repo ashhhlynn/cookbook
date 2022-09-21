@@ -1,4 +1,4 @@
-<h1><%= @recipe.name.titleize %> </h1>
+<h1><%= @recipe.name %> </h1>
 <% if recipe_owned %>
 <h3><%= link_to "Edit Recipe", edit_recipe_path %> </h3>
 <% end %>
@@ -8,10 +8,12 @@
  <%= @recipe.created_at.strftime("%m-%d-%y") %></h3>
  <h3><%= link_to @recipe.reviews.count, recipe_reviews_path(@recipe) %> Reviews </h3>
  <p>Desciption: <%= @recipe.description %></p>
+ <div class= "ingredients">
  <p>Ingredients:</p>
  <% @recipe.recipe_ingredients.each do |ri| %>
      <p><li>
-     <%= ri.quantity.titleize %>
-     <%= ri.ingredient.name.titleize %>
+     <%= ri.quantity %>
+     <%= ri.ingredient.name %>
      <% end %>
      </li></p>
+</div>

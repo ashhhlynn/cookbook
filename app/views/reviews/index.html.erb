@@ -1,16 +1,18 @@
-<h2>Reviews for <%= @recipe.name.titleize %></h2>
-<p>
+<h1>Reviews for <%= @recipe.name.titleize %></h1>
+<h2><%= link_to "Create Review", new_recipe_review_path(@recipe) %></h2>
+
+<h3>
 <% if @recipe.reviews.none? %>
-This recipe hasn't been reviewed yet! </p>
+0 Reviews
 <% end %> 
+</h3>
 
 <% @reviews.each do |rev| %>
-<h4> By <%= link_to rev.user.username, user_path(rev.user)%> 
-<%= rev.created_at.strftime("%m-%d-%y") %></h4>
-<p><%= rev.text %>  
-<% if rev.user == current_user %>
-<%= link_to "Edit", edit_recipe_review_path(@recipe, rev) %>
+<h3>By <%= link_to rev.user.username, user_path(rev.user)%> 
+<%= rev.created_at.strftime("%m-%d-%y") %></h3>
+<h3><%= rev.text %>
+<% if rev.user = current_user %>
+<%= link_to "Edit", edit_recipe_review_path(@recipe, rev) %></h3>
 <% end %>
 <% end %>
-<br><br>
-<%= link_to "Create Review", new_recipe_review_path(@recipe) %></p>
+

@@ -47,11 +47,17 @@
 
   h1 {
     font-size: 2.5em;
+    text-transform: capitalize;
   }
   
   h2 {
     font-size: 2em;
     color: #777;
+    text-transform: capitalize;
+  }
+
+  .ingredients {
+    text-transform: capitalize;
   }
   
   h3 {
@@ -120,5 +126,5 @@
     form {
         display: block;
         text-align: center;
-     
+        margin-bottom: 10px
     }
