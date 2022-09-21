@@ -81,6 +81,7 @@
     }
 
     .header {
+        margin-bottom: 20px;
         text-align: center;
         background-color: rgba(129, 126, 126, 0.231);
         color: black;
@@ -115,3 +116,9 @@
         font-size: .8em;
         line-height: 1.3em;
         } 
+
+    form {
+        display: block;
+        text-align: center;
+     
+    }
