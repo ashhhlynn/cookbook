@@ -47,6 +47,7 @@ def create
 if @recipe.save 
 redirect_to recipe_path(@recipe)
 else 
+10.times { @recipe.recipe_ingredients.build.build_ingredient}
 render :new
 end 
 end 

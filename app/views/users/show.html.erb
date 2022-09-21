@@ -1,8 +1,7 @@
 <h1> <%= @user.username %>'s Recipes</h1>
-<% @user.recipes.each do |rec| %>
-<h2> <%= link_to rec.name, recipe_path(rec) %> </h2>
-<img src= "<%= rec.image_url %>">
-<% end %>
+
+<%= render 'recipes/recipe' %>
+
 <% if @user.recipes.none? %>
 <p>0 Recipes</p>
 <% end %>

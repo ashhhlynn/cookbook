@@ -23,10 +23,11 @@
     <% end %>
  
 <% @recipes.each do |r| %>
-<h2><%= link_to r.name, recipe_path(r) %></h2>
-<img src= "<%= r.image_url %>"><br>
-<h3>Recipe By  <%= link_to r.user.username, user_path(r.user) %>
-<%= r.created_at.strftime("%m-%d-%y") %></h3>
-<h3><%= link_to r.reviews.count, recipe_reviews_path(r) %> Reviews </h3>
-<h3><%= r.recipe_ingredients.count %> ingredients</h3>
-<% end %>
+    <h2><%= link_to r.name, recipe_path(r) %></h2>
+    <img src= "<%= r.image_url %>"><br>
+    <h3>Recipe By  <%= link_to r.user.username, user_path(r.user) %>
+    <%= r.created_at.strftime("%m-%d-%y") %></h3>
+    <h3><%= link_to r.reviews.count, recipe_reviews_path(r) %> Reviews </h3>
+    <h3><%= r.recipe_ingredients.count %> ingredients</h3>
+    <% end %>
+    

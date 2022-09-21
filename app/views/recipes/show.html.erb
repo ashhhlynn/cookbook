@@ -3,11 +3,15 @@
 <h3><%= link_to "Edit Recipe", edit_recipe_path %> </h3>
 <% end %>
 
- <img src= "<%= @recipe.image_url %>"<br>
- <h3>Recipe By <%= link_to @recipe.user.username, user_path(@recipe.user) %>
- <%= @recipe.created_at.strftime("%m-%d-%y") %></h3>
- <h3><%= link_to @recipe.reviews.count, recipe_reviews_path(@recipe) %> Reviews </h3>
- <p>Desciption: <%= @recipe.description %></p>
+
+<img src= "<%= @recipe.image_url %>"<br>
+<h3>Recipe By <%= link_to @recipe.user.username, user_path(@recipe.user) %>
+<%= @recipe.created_at.strftime("%m-%d-%y") %></h3>
+<h3><%= link_to @recipe.reviews.count, recipe_reviews_path(@recipe) %> Reviews </h3>
+<h3><%= @recipe.recipe_ingredients.count %> ingredients</h3>
+<p>Desciption: <%= @recipe.description %></p>
+
+
  <div class= "ingredients">
  <p>Ingredients:</p>
  <% @recipe.recipe_ingredients.each do |ri| %>
