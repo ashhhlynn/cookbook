@@ -7,14 +7,7 @@ before_action :user_ownership, only: [:edit, :destroy]
 def index 
 @users = User.all
 @ingredients = Ingredient.all 
-if !params[:user].blank? && !params[:ingredient].blank?
-    @recipes = Recipe.by_user(params[:user])
-    @recipes = []
-    @ingredient = Ingredient.find(params[:ingredient])
-    @ingredient.recipe_ingredients.each do |ri|
-            @recipes << ri.recipe 
-    end
-elsif !params[:user].blank?
+if !params[:user].blank?
 @recipes = Recipe.by_user(params[:user])
 elsif !params[:ingredient].blank?
     @recipes = []

@@ -3,14 +3,9 @@
 <%= form_tag("/recipes", method: "get") do %>
 <%= select_tag "user", options_from_collection_for_select(@users, "id", "username"), include_blank: true %>
 <%= select_tag "ingredient", options_from_collection_for_select(@ingredients, "id", "name"), include_blank: true %>
-
-<%= submit_tag "Filter by User" %>
+<%= submit_tag "Filter by User or Ingredient" %>
 <% end %>
 
-<%= form_tag("/recipes", method: "get") do %>
-<%= select_tag "ingredient", options_from_collection_for_select(@ingredients, "id", "name"), include_blank: true %>
-<%= submit_tag "Filter by Ingredient" %>
-<% end %>
 
 <%= form_tag("/recipes", method: "get") do  %>
     <%= radio_button :recency, "recency", include_blank: true  %>
@@ -21,13 +16,7 @@
     <label for="reviews_count">Most Reviewed</label>
     <%= submit_tag 'Sort' %>
     <% end %>
- 
-<% @recipes.each do |r| %>
-    <h2><%= link_to r.name, recipe_path(r) %></h2>
-    <img src= "<%= r.image_url %>"><br>
-    <h3>Recipe By  <%= link_to r.user.username, user_path(r.user) %>
-    <%= r.created_at.strftime("%m-%d-%y") %></h3>
-    <h3><%= link_to r.reviews.count, recipe_reviews_path(r) %> Reviews </h3>
-    <h3><%= r.recipe_ingredients.count %> ingredients</h3>
-    <% end %>
-    
+
+      <%= render :partial => "recipe", :collection => @recipes %>
+
+
