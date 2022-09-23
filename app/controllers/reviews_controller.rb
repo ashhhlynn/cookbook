@@ -6,7 +6,7 @@ before_action :user_review_ownership, only: [:edit, :destroy]
 
 def index
 @recipe = Recipe.find(params[:recipe_id])
-@reviews = @recipe.reviews 
+@reviews = @recipe.reviews
 end 
     
 def new
@@ -18,9 +18,11 @@ def create
 @recipe = Recipe.find(params[:recipe_id])
 @review = @recipe.reviews.build(review_params)
 @review.user = current_user 
-# ' do i need '
-@review.save
-redirect_to root_path
+if @review.save
+redirect_to recipe_path(@recipe)
+else 
+render :new
+end 
 end 
     
 def edit
@@ -32,17 +34,16 @@ def update
 @recipe = Recipe.find(params[:recipe_id])
 @review = Review.find(params[:id])
 if @review.update(review_params)
-redirect_to recipes_path
+redirect_to recipe_path(@recipe)
 else
 render :edit 
 end 
 end 
     
 def destroy 
-@recipe = Recipe.find(params[:recipe_id])
 @review = Review.find(params[:id])
 @review.destroy
-redirect_to recipe_path(@recipe)
+redirect_to recipes_path
 end 
     
     

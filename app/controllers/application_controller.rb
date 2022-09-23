@@ -34,10 +34,9 @@ end
 
 
 def user_review_ownership
+@recipe = Recipe.find_by(id: params[:id])
 @review = Review.find_by(id: params[:id])
-    if @review.user != current_user
-    redirect_to user_path(current_user)
-    end 
+return head(:forbidden) unless @review.user == current_user
 end 
 
 end
