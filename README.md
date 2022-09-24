@@ -1,4 +1,4 @@
-# Watchlist 
+# Cookbook
 
 A user can sign up and login (or login through a Github account), create, read, update, or delete recipes (edit or delete only their own), and create, read, update, or delete recipe reviews. 
 
