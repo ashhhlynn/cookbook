@@ -16,8 +16,7 @@ root 'application#index'
 
   resources :users 
   resources :recipes 
-  resources :ingredients 
-  resources :recipe_ingredients 
+
 
   resources :recipes, only: [:index] do
     resources :reviews, only: [:index, :new, :create, :edit, :update, :show, :destroy]

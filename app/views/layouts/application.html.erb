@@ -14,7 +14,11 @@
   <h1>The Cookbook</h1>
   <img src ="https://images.squarespace-cdn.com/content/v1/518ea9e4e4b0eb1ecff22776/1480450074024-LTJO255BUA2ODWGZDNJI/Quality+Ingredients?format=1500w">
   </header>
-  
+
+  <% if flash[:alert] %>
+ <center> <%= flash[:alert] %> </center>
+<% end %>
+
   <%= yield %>
 
 <footer class="footer">

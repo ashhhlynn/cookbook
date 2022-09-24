@@ -22,9 +22,10 @@ end
 
 def user_ownership
 @recipe = Recipe.find_by(id: params[:id])
-    if @recipe.user != current_user
-    redirect_to user_path(current_user)
-    end 
+if @recipe.user != current_user
+    flash[:alert] = "You aren't the owner of this recipe!"
+    redirect_to recipes_path
+end 
 end 
 
 def recipe_owned 
@@ -36,7 +37,10 @@ end
 def user_review_ownership
 @recipe = Recipe.find_by(id: params[:id])
 @review = Review.find_by(id: params[:id])
-return head(:forbidden) unless @review.user == current_user
+if @review.user != current_user
+flash[:alert] = "You aren't the owner of this review!"
+redirect_to root_path
+end 
 end 
 
 end
