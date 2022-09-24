@@ -1,24 +1,24 @@
-# README
+# Watchlist 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A user can sign up and login (or login through a Github account), create, read, update, or delete recipes (edit or delete only their own), and create, read, update, or delete recipe reviews. 
 
-Things you may want to cover:
 
-* Ruby version
+## Install Instructions
 
-* System dependencies
+To use this app, please follow these steps:
 
-* Configuration
+Clone and cd cookbook
+run: 'bundle install', 'rails db:migrate', 'rails s'
 
-* Database creation
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+Bug reports and pull requests are welcome on Github at https://github.com/ashhhlynn/cookbook
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
+The gem is available as open source under the terms of the MIT License: https://opensource.org/licenses/MIT
 
-* ...
+## Author
+
+Ashley 
