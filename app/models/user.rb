@@ -9,5 +9,6 @@ class User < ApplicationRecord
     validates :password, presence: true, unless: :uid?
 
 
-    has_secure_password validations: false
+    has_secure_password 
+    #' validations: false '
 end 
