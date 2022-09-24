@@ -1,4 +1,11 @@
 <h1>Welcome to the Cookbook App!</h2>
 <h2>Create Recipes | View Recipes by Other Users | Write Recipe Reviews </h2>
 
-<%= link_to('Log in with GitHub!', '/auth/github', method: :post) %>
+
+<% if session[:user_id] %>
+  <h3>Hi, <%= current_user.username %></h3>
+  <h3>GitHub UID: <%= current_user.uid %></h3>
+<% else %>
+<h3><%= link_to('Log in with GitHub!', '/auth/github', method: :post) %></h3>
+
+<% end %>
