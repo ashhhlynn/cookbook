@@ -77,6 +77,5 @@ I tried to make it as DRY as possible.
 I tried to use as limited logic as possible. 
 - [x] Views use helper methods if appropriate:
 I used current_user in the Reviews index & Application index, recipe_owned in the Recipe show page. I also used helper methods in many of the before_actions for the views. 
-
 - [x] Views use partials if appropriate:
 I have a partial form for my new and edit Recipe views, and a partial form for my new and edit Review views. I also created a Recipe partial, that my Recipe show view and User show view uses. 
