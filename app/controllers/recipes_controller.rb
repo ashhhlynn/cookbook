@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 before_action :require_login
 skip_before_action :require_login, only: [:index, :show]
 before_action :user_ownership, only: [:edit, :destroy]
+before_action :recipe_exists, only: [:show]
 
 def index 
 @users = User.all
