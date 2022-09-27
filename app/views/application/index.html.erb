@@ -3,8 +3,10 @@
 
 
 <% if session[:user_id] %>
-  <h3>Hi, <%= current_user.username %></h3>
+  <h2>Hi, <%= current_user.username %>!</h2>
+  <% if current_user.uid %>
   <h3>GitHub UID: <%= current_user.uid %></h3>
+  <% end %>
 <% else %>
 <h3><%= link_to('Log in with GitHub!', '/auth/github', method: :post) %></h3>
 
