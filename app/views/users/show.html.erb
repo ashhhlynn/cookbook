@@ -1,17 +1,15 @@
 <h1> <%= @user.username %>'s Recipes</h1>
 <%= render :partial => "recipes/recipe", :collection => @user.recipes %>
-
 <% if @user.recipes.none? %>
 <h3>0 Recipes</h3>
 <% end %>
 
 <h2>Reviews:</h2>
-
 <% if @user.reviews.any? %>
 <% @user.reviews.each do |rev| %>
-<h3><%= link_to rev.recipe.name, recipe_path(rev.recipe)%> <%= rev.created_at.strftime("%m-%d-%y")%><h3>
-<h3> <%= rev.text %><h3>
-<% end %> 
+    <h3><%= link_to rev.recipe.name, recipe_path(rev.recipe)%> <%= rev.created_at.strftime("%m-%d-%y")%><h3>
+    <h3> <%= rev.text %><h3>
+    <% end %> 
 <% else %>
 <h3> 0 Reviews </h3>
 <% end %> 

@@ -18,11 +18,11 @@ def create
 @recipe = Recipe.find(params[:recipe_id])
 @review = @recipe.reviews.build(review_params)
 @review.user = current_user 
-if @review.save
-redirect_to recipe_path(@recipe)
-else 
-render :new
-end 
+    if @review.save
+    redirect_to recipe_path(@recipe)
+    else 
+    render :new
+    end 
 end 
     
 def edit
@@ -33,11 +33,11 @@ end
 def update
 @recipe = Recipe.find(params[:recipe_id])
 @review = Review.find(params[:id])
-if @review.update(review_params)
-redirect_to recipe_path(@recipe)
-else
-render :edit 
-end 
+    if @review.update(review_params)
+    redirect_to recipe_path(@recipe)
+    else
+    render :edit 
+    end 
 end 
     
 def destroy 
@@ -45,14 +45,11 @@ def destroy
 @review.destroy
 redirect_to recipes_path
 end 
-    
-    
-        
-        
+           
 private
+
 def review_params
 params.require(:review).permit(:text, :user_id, :recipe_id)
 end
       
-
 end 

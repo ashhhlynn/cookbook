@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Cookbook</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -8,7 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 <body>
   <header class="header">
   <h1>The Cookbook</h1>
@@ -16,27 +16,27 @@
   </header>
 
   <% if flash[:alert] %>
- <center> <%= flash[:alert] %> </center>
-<% end %>
+  <center> <%= flash[:alert] %> </center>
+  <% end %>
 
   <%= yield %>
 
-<footer class="footer">
-<nav>
-<ul>
-<%= link_to "Home", root_path %> 
-<%= link_to "All Recipes", recipes_path %> 
-<%= link_to "All Users", users_path %>
-<% if !current_user %>
-<%= link_to "Sign Up", new_user_path %>
-<%= link_to "Login", login_path %>
-<% else %>
-<%= link_to "Add Recipe", new_recipe_path %>
-<%= link_to "Your Page", user_path(current_user) %>
-<%= link_to "Log Out", logout_path, method: "post" %>
-<% end %>
-</ul>
-</nav>
-</footer>
+  <footer class="footer">
+  <nav>
+  <ul>
+  <%= link_to "Home", root_path %> 
+  <%= link_to "All Recipes", recipes_path %> 
+  <%= link_to "All Users", users_path %>
+  <% if !current_user %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Login", login_path %>
+  <% else %>
+    <%= link_to "Add Recipe", new_recipe_path %>
+    <%= link_to "Your Page", user_path(current_user) %>
+    <%= link_to "Log Out", logout_path, method: "post" %>
+  <% end %>
+  </ul>
+  </nav>
+  </footer>
 </body>
 </html>
