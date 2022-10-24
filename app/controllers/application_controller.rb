@@ -4,7 +4,6 @@ helper_method :current_user
 helper_method :require_login
 helper_method :user_ownership
 helper_method :user_review_ownership
-helper_method :recipe_owned
 helper_method :recipe_exists 
 
 def index 
@@ -32,12 +31,6 @@ def recipe_exists
     redirect_to recipes_path 
     end 
 end 
-
-def recipe_owned 
-@recipe = Recipe.find_by(id: params[:id])
-@recipe.user == current_user 
-end 
-
 
 def user_review_ownership
 @recipe = Recipe.find_by(id: params[:id])

@@ -15,8 +15,8 @@ resources :users
 resources :recipes 
 
 
-resources :recipes, only: [:index] do
-  resources :reviews, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+resources :recipes, only: [:show] do
+  resources :reviews, only: [:index, :new, :create, :edit, :update, :destroy]
 end
 
 

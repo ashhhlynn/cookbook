@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
 before_action :require_login
-skip_before_action :require_login, only: [:index, :show]
+skip_before_action :require_login, only: [:index]
 before_action :user_review_ownership, only: [:edit, :destroy]
 
 def index
