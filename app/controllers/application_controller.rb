@@ -14,7 +14,10 @@ def current_user
 end
 
 def require_login
-return head(:forbidden) unless session.include? :user_id
+if !current_user 
+flash[:alert] = "You must be logged in to view this page!"
+redirect_to root_path
+end
 end
 
 def user_ownership
