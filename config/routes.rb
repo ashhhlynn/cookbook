@@ -3,23 +3,21 @@ Rails.application.routes.draw do
 
 root 'application#index'
 
- get  '/signup',  to: 'users#new' 
- post '/signup',  to: 'users#create' 
+get  '/signup',  to: 'users#new' 
+post '/signup',  to: 'users#create' 
+get '/auth/github/callback' => 'sessions#create'
+
+get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+post '/logout', to: 'sessions#destroy'
+
+resources :users 
+resources :recipes 
 
 
- get '/auth/github/callback' => 'sessions#create'
-
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  post '/logout', to: 'sessions#destroy'
-
-  resources :users 
-  resources :recipes 
-
-
-  resources :recipes, only: [:index] do
-    resources :reviews, only: [:index, :new, :create, :edit, :update, :show, :destroy]
-  end
+resources :recipes, only: [:index] do
+  resources :reviews, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+end
 
 
 end

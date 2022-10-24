@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-
-
 helper_method :current_user 
 helper_method :require_login
 helper_method :user_ownership
@@ -22,10 +20,10 @@ end
 
 def user_ownership
 @recipe = Recipe.find_by(id: params[:id])
-if @recipe == nil || @recipe.user != current_user
+    if @recipe == nil || @recipe.user != current_user
     flash[:alert] = "You aren't the owner of this recipe!"
     redirect_to recipes_path
-end 
+    end 
 end 
 
 def recipe_exists
