@@ -5,14 +5,12 @@
 <% end %>
 
 <p>Desciption: <%= @recipe.description %></p>
-
-
- <div class= "ingredients">
- <p>Ingredients:</p>
- <% @recipe.recipe_ingredients.each do |ri| %>
-     <p><li>
-     <%= ri.quantity %>
-     <%= ri.ingredient.name %>
-     <% end %>
-     </li></p>
+<div class= "ingredients">
+<p>Ingredients:</p>
+<% @recipe.recipe_ingredients.each do |ri| %>
+    <p><li>
+    <%= ri.quantity %>
+    <%= ri.ingredient.name %>
+<% end %>
+</li></p>
 </div>

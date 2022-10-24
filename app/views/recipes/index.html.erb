@@ -6,17 +6,16 @@
 <%= submit_tag "Filter by User or Ingredient" %>
 <% end %>
 
-
 <%= form_tag("/recipes", method: "get") do  %>
-    <%= radio_button :recency, "recency", include_blank: true  %>
-    <label for="recency">Most Recent</label>
-    <%= radio_button :ingredients_count, "ingredients_count", include_blank: true  %>
-    <label for="ingredients_count">Lowest Number of Ingredients</label>
-    <%= radio_button :reviews_count, "reviews_count", include_blank: true  %>
-    <label for="reviews_count">Most Reviewed</label>
-    <%= submit_tag 'Sort' %>
-    <% end %>
+  <%= radio_button :recency, "recency", include_blank: true  %>
+  <label for="recency">Most Recent</label>
+  <%= radio_button :ingredients_count, "ingredients_count", include_blank: true  %>
+  <label for="ingredients_count">Lowest Number of Ingredients</label>
+  <%= radio_button :reviews_count, "reviews_count", include_blank: true  %>
+  <label for="reviews_count">Most Reviewed</label>
+  <%= submit_tag 'Sort' %>
+<% end %>
 
-      <%= render :partial => "recipe", :collection => @recipes %>
+<%= render :partial => "recipe", :collection => @recipes %>
 
 
