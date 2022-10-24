@@ -11,9 +11,9 @@ end
     
 def new
 @recipe = Recipe.find(params[:recipe_id])
-@review = Review.new
+@review = Review.new 
 end 
-     
+
 def create
 @recipe = Recipe.find(params[:recipe_id])
 @review = @recipe.reviews.build(review_params)
@@ -51,5 +51,5 @@ private
 def review_params
 params.require(:review).permit(:text, :user_id, :recipe_id)
 end
-      
-end 
+
+end

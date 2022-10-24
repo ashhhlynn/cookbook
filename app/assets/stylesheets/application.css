@@ -32,11 +32,9 @@
     padding-bottom: 5px;
     background-color: rgba(129, 126, 126, 0.231);
     text-align: center;
-  }
-
-  footer a {
-    color: rgb(60, 43, 101);
     font-size: 1.2em;
+    color: rgb(60, 43, 101);
+    display: block;
   }
 
   .center h1 {

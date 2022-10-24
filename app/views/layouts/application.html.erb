@@ -26,8 +26,7 @@
   <%= yield %>
 
   <footer class="footer">
-  <nav>
-  <ul>
+<nav>
   <%= link_to "Home", root_path %> 
   <%= link_to "All Recipes", recipes_path %> 
   <%= link_to "All Users", users_path %>
@@ -39,8 +38,7 @@
     <%= link_to "Your Page", user_path(current_user) %>
     <%= link_to "Log Out", logout_path, method: "post" %>
   <% end %>
-  </ul>
-  </nav>
+</nav>
   </footer>
 </body>
 </html>

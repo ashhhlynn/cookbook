@@ -17,7 +17,7 @@ user = User.find_by(email: params[:session][:email])
   session[:user_id] = user.id 
   redirect_to recipes_path
   else
-  flash[:alert] = "Something went wrong. Try again!"
+  flash[:alert] = "Your Email or Password is Invalid! Try again."
   render :new
   end 
 end 
