@@ -11,47 +11,47 @@ def index
 end 
 
 def new
-@recipe = Recipe.find(params[:recipe_id])
-@review = Review.new 
+    @recipe = Recipe.find(params[:recipe_id])
+    @review = Review.new 
 end 
 
 
 def create
-@recipe = Recipe.find(params[:recipe_id])
-@review = @recipe.reviews.build(review_params)
-@review.user = current_user 
+    @recipe = Recipe.find(params[:recipe_id])
+    @review = @recipe.reviews.build(review_params)
+    @review.user = current_user 
     if @review.save
-    redirect_to recipe_path(@recipe)
+        redirect_to recipe_path(@recipe)
     else 
-    render :new
+        render :new
     end 
 end 
     
 def edit
-@recipe = Recipe.find(params[:recipe_id])
-@review = Review.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @review = Review.find(params[:id])
 end 
         
 def update
-@recipe = Recipe.find(params[:recipe_id])
-@review = Review.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @review = Review.find(params[:id])
     if @review.update(review_params)
-    redirect_to recipe_path(@recipe)
+        redirect_to recipe_path(@recipe)
     else
-    render :edit 
+        render :edit 
     end 
 end 
     
 def destroy 
-@review = Review.find(params[:id])
-@review.destroy
-redirect_to recipes_path
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to recipes_path
 end 
            
 private
 
 def review_params
-params.require(:review).permit(:text, :user_id, :recipe_id, recipe_attributes: [:id])
+    params.require(:review).permit(:text, :user_id, :recipe_id, recipe_attributes: [:id])
 end
 
 end
