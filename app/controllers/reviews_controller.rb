@@ -3,16 +3,18 @@ class ReviewsController < ApplicationController
 before_action :require_login
 skip_before_action :require_login, only: [:index]
 before_action :user_review_ownership, only: [:edit, :destroy]
+before_action :recipe_exists_review, only: [:index, :new]
 
 def index
-@recipe = Recipe.find(params[:recipe_id])
-@reviews = @recipe.reviews
+    @recipe = Recipe.find(params[:recipe_id])
+    @reviews = @recipe.reviews
 end 
-    
+
 def new
 @recipe = Recipe.find(params[:recipe_id])
 @review = Review.new 
 end 
+
 
 def create
 @recipe = Recipe.find(params[:recipe_id])
@@ -49,7 +51,7 @@ end
 private
 
 def review_params
-params.require(:review).permit(:text, :user_id, :recipe_id)
+params.require(:review).permit(:text, :user_id, :recipe_id, recipe_attributes: [:id])
 end
 
 end
