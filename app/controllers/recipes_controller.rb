@@ -11,11 +11,7 @@ def index
     if !params[:user].blank?
         @recipes = Recipe.by_user(params[:user])
     elsif !params[:ingredient].blank?
-        @recipes = []
-        @ingredient = Ingredient.find(params[:ingredient])
-        @ingredient.recipe_ingredients.each do |ri|
-            @recipes << ri.recipe 
-        end
+        @recipes = Recipe.by_ingredient(params[:ingredient])
     elsif !params[:recency].blank?
         @recipes = Recipe.most_recent
     elsif !params[:reviews_count].blank?
@@ -71,10 +67,8 @@ private
 
 def recipe_params
     params.require(:recipe).permit(:name, :description, :image_url, :user_id, recipe_ingredients_attributes: 
-        [:quantity, :id, :_destroy, 
-        ingredient_attributes: 
-        [:name]
-        ])
+        [:quantity, :id, :_destroy, ingredient_attributes: 
+        [:name]])
 end 
 
 end 

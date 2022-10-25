@@ -17,19 +17,23 @@ default_scope { order('recipes.name ASC') }
 accepts_nested_attributes_for :recipe_ingredients, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:quantity].blank? || attrs[:ingredient_attributes][:name].blank?} 
 
 def self.by_user(user_id)
-where(user: user_id)
+    where(user: user_id)
+end 
+
+def self.by_ingredient(ingredient)
+    Recipe.joins(:recipe_ingredients).where('recipe_ingredients.ingredients' => ingredient).distinct
 end 
 
 def self.most_recent
-@recipes = Recipe.reorder("created_at DESC")
+    @recipes = Recipe.reorder("created_at DESC")
 end 
   
 def self.reviews_count
-@recipes = Recipe.joins(:reviews).group('recipes.id').reorder("COUNT(reviews.id) DESC")
+    @recipes = Recipe.joins(:reviews).group('recipes.id').reorder("COUNT(reviews.id) DESC")
 end 
   
 def self.ingredients_count
-@recipes = Recipe.joins(:recipe_ingredients).group('recipes.id').reorder("COUNT(recipe_ingredients.id)")
+    @recipes = Recipe.joins(:recipe_ingredients).group('recipes.id').reorder("COUNT(recipe_ingredients.id)")
 end 
 
 end 
