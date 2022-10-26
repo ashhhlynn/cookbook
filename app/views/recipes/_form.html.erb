@@ -1,13 +1,14 @@
 <%= form_for @recipe do |f| %> 
   <% if @recipe.errors.any? %>
-  <div id="error_explanation">
-  <h3>
-  <%= pluralize(@recipe.errors.count, "error") %>
-  prohibited this recipe from being saved: </h3>
-  <% @recipe.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </div>
+    <div id="error_explanation">
+      <h3>
+      <%= pluralize(@recipe.errors.count, "error") %>
+      prohibited this recipe from being saved: 
+      </h3>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </div>
   <% end %>
   <br>
   <%= f.label :name %><br>
@@ -22,10 +23,10 @@
     <%= ri.label :quantity %>
     <%= ri.text_field :quantity %>
     Remove<%= ri.check_box :_destroy  %>
-    <%= ri.fields_for :ingredient do |i| %>
-      <%= i.label :ingredient %>
-      <%= i.text_field :name %>
-      <% end %><br>
+      <%= ri.fields_for :ingredient do |i| %>
+        <%= i.label :ingredient %>
+        <%= i.text_field :name %>
+        <% end %><br>
   <% end %>
   <%= f.submit %>
-  <% end %>
+<% end %>
