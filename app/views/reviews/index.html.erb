@@ -1,7 +1,3 @@
 <h1>Reviews for <%= r.name.titleize %></h1>
 <h2><%= link_to "Create Review", new_recipe_review_path(r) %></h2>
-<h3><% if r.reviews.none? %>
-        0 Reviews
-    <% end %></h3>
-
-<%= render @reviews %>
+<%= render @reviews %><br><br>

@@ -1,15 +1,9 @@
-<h1> <%= @user.username %>'s Recipes</h1>
+<h1> <%= @user.username %></h1>
+<h2>Recipes:</h2>
 <%= render :partial => "recipes/recipe", :collection => @user.recipes %>
 
-<% if @user.recipes.none? %>
-    <h3>0 Recipes</h3>
-<% end %>
-
 <h2>Reviews:</h2>
-<% if @user.reviews.any? %>
-    <%= render :partial => "reviews/review", :collection => @user.reviews %>
-<% else %>
-    <h3> 0 Reviews </h3>
-<% end %> 
+<%= render :partial => "reviews/review", :collection => @user.reviews %>
+<br><br>
 
 
