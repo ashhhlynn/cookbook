@@ -1,13 +1,12 @@
 <h1>Welcome to the Cookbook App,
 <% if session[:user_id] %>
-<%= current_user.username %>
+  <%= current_user.username %>
   <% if current_user.uid %>
-  GitHub User <%= current_user.uid %>
+    GitHub User <%= current_user.uid %>
   <% end %>
 <% else %>
-Login with
-<%= link_to('GitHub', '/auth/github', method: :post) %> or
-<%= link_to "Username", login_path %>!
-<% end %>
-</h1>
+  Login with
+  <%= link_to('GitHub', '/auth/github', method: :post) %> or
+  <%= link_to "Username", login_path %>!
+<% end %></h1>
 <h2>Create Recipes | View Recipes by Other Users | Write Recipe Reviews </h2>
