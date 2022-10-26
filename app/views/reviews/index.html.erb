@@ -4,6 +4,4 @@
         0 Reviews
     <% end %></h3>
 
-<% @reviews.each do |review| %>
-    <%= render partial: "reviews/review", locals: {review: review} %>
-<% end %>
+<%= render @reviews %>
