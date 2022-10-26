@@ -2,8 +2,7 @@ class ReviewsController < ApplicationController
 
 before_action :require_login
 skip_before_action :require_login, only: [:index]
-before_action :user_review_ownership, only: [:edit, :destroy]
-before_action :recipe_exists_review, only: [:new, :index]
+before_action :recipe_exists_review, only: [:new, :index, :edit]
 
 def index
     @reviews = Recipe.find(params[:recipe_id]).reviews
@@ -30,8 +29,12 @@ end
 def edit
     recipe = Recipe.find_by(id: params[:recipe_id])
     @review = recipe.reviews.find_by(id: params[:id])
+    if @review == nil || @review.user != current_user 
+        flash[:alert] = "You aren't the owner of this review!"
+        redirect_to root_path
+    end 
 end 
-        
+
 def update
     @review = Review.find(params[:id])
     if @review.update(review_params)

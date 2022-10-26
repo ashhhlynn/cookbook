@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 helper_method :require_login
 helper_method :current_user
 helper_method :user_ownership
-helper_method :user_review_ownership
 helper_method :recipe_exists 
 helper_method :recipe_exists_review
 
@@ -43,13 +42,5 @@ def recipe_exists_review
     end 
 end 
 
-def user_review_ownership
-    recipe = Recipe.find_by(id: params[:recipe_id])
-    @review = Review.find_by(id: params[:id])
-    if @review == nil || @review.user != current_user
-        flash[:alert] = "You aren't the owner of this review!"
-        redirect_to root_path
-    end 
-end 
 
 end
