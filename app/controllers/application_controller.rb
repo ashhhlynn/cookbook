@@ -44,7 +44,7 @@ def recipe_exists_review
 end 
 
 def user_review_ownership
-    @recipe = Recipe.find_by(id: params[:id])
+    recipe = Recipe.find_by(id: params[:recipe_id])
     @review = Review.find_by(id: params[:id])
     if @review == nil || @review.user != current_user
         flash[:alert] = "You aren't the owner of this review!"
