@@ -1,12 +1,9 @@
 <h1>All Recipes </h1>
 
 <%= form_tag("/recipes", method: "get") do %>
-<%= select_tag "user", options_from_collection_for_select(@users, "id", "username"), include_blank: true %>
-<%= select_tag "ingredient", options_from_collection_for_select(@ingredients, "id", "name"), include_blank: true %>
-<%= submit_tag "Filter by User or Ingredient" %>
-<% end %>
-
-<%= form_tag("/recipes", method: "get") do  %>
+  <%= select_tag "user", options_from_collection_for_select(@users, "id", "username"), include_blank: true %>
+  <%= select_tag "ingredient", options_from_collection_for_select(@ingredients, "id", "name"), include_blank: true %>
+  <%= submit_tag "Filter by User or Ingredient" %><br>
   <%= radio_button :recency, "recency", include_blank: true  %>
   <label for="recency">Most Recent</label>
   <%= radio_button :ingredients_count, "ingredients_count", include_blank: true  %>

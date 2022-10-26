@@ -6,6 +6,8 @@ helper_method :user_ownership
 helper_method :recipe_exists 
 helper_method :recipe_exists_review
 
+clear_helpers()
+
 def index 
 end 
 
