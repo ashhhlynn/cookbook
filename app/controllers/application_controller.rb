@@ -5,8 +5,9 @@ helper_method :current_user
 #' helper_method :user_ownership '
 #' helper_method :recipe_exists '
 #' helper_method :recipe_exists_review '
+#' helper_method :user_ownership_review '
 
-clear_helpers()
+#' clear_helpers() '
 
 def index 
 end 
@@ -25,24 +26,31 @@ end
 def user_ownership
     @recipe = Recipe.find_by(id: params[:id])
     if @recipe == nil || @recipe.user != current_user
-        flash[:alert] = "You aren't the owner of this recipe!"
+        flash[:alert] = "This recipe doesn't belong to you!"
         redirect_to recipes_path
     end 
 end 
 
 def recipe_exists
     if Recipe.find_by(id: params[:id]) == nil
-        flash[:alert] = "There isn't a recipe with this ID"
+        flash[:alert] = "This recipe doesn't exist!"
         redirect_to recipes_path 
     end 
 end 
 
 def recipe_exists_review
     if Recipe.find_by(id: params[:recipe_id]) == nil 
-        flash[:alert] = "There isn't a recipe with this ID"
+        flash[:alert] = "This recipe doesn't exist!"
         redirect_to recipes_path
     end 
 end 
 
+def user_ownership_review
+    @review = Review.find_by(id: params[:id])
+    if @review == nil || @review.user != current_user 
+        flash[:alert] = "This review doesn't exist or it doesn't belong to you!"
+        redirect_to recipes_path
+    end 
+end 
 
 end
