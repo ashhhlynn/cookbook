@@ -1,5 +1,5 @@
 <h1>Welcome to the Cookbook App,
-<% if session[:user_id] %>
+<% if current_user %>
   <%= current_user.username %>
   <% if current_user.uid %>
     GitHub User <%= current_user.uid %>
