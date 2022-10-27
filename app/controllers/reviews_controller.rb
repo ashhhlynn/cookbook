@@ -52,7 +52,7 @@ end
 private
 
 def review_params
-    params.require(:review).permit(:text, :user_id, :recipe_id, recipe_attributes: [:id])
+    params.require(:review).permit(:text, :user_id, :recipe_id)
 end
 
 end
