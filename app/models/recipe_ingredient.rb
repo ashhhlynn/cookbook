@@ -13,6 +13,6 @@ def ingredient_attributes=(ingredient_attributes)
         ingredient = Ingredient.find_or_create_by(name: ia.downcase)
         self.ingredient = ingredient 
     end
-end
-
 end 
+
+end

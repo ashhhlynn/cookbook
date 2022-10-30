@@ -5,8 +5,12 @@ def index
 end 
 
 def show 
-    @user = User.find(params[:id])
-end
+    @user = User.find_by(id: params[:id])
+    if @user == nil 
+        flash[:alert] = "This user doesn't exist!"
+        redirect_to users_path
+    end
+end 
 
 def new 
     @user = User.new 
@@ -22,13 +26,10 @@ def create
     end 
 end 
 
-
-
 private 
 
 def user_params 
     params.require(:user).permit(:email, :username, :password, :password_confirmation)
 end 
-
 
 end 

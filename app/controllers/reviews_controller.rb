@@ -10,7 +10,7 @@ def index
 end 
 
 def show 
-    @review = Review.find(params[:id])
+    @review = Review.find_by(params[:id])
 end 
 
 def new
@@ -28,9 +28,6 @@ def create
 end 
     
 def edit
-    #' recipe = Recipe.find(params[:recipe_id]) '
-    #' recipe = Recipe.find_by(id: params[:recipe_id]) '
-   #' @review = recipe.reviews.find_by(id: params[:id]) ' #'?'
     @review = Review.find(params[:id])
 end 
 

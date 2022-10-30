@@ -1,13 +1,6 @@
 class ApplicationController < ActionController::Base
 
-#' helper_method :require_login '
 helper_method :current_user
-#' helper_method :user_ownership '
-#' helper_method :recipe_exists '
-#' helper_method :recipe_exists_review '
-#' helper_method :user_ownership_review '
-
-#' clear_helpers() '
 
 def index 
 end 
