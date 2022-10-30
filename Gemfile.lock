@@ -248,6 +248,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.8)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  omniauth
   omniauth-github (~> 1.1)
   omniauth-rails_csrf_protection
   puma (~> 5.0)
