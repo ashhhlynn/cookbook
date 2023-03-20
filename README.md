@@ -1,27 +1,57 @@
 # Cookbook
 
-Ruby on Rails application for storing and reviewing recipes. A user can sign up and login, login through Github, create recipes, edit & delete only their own recipes, view recipes and reviews by other users, write reviews, and edit & delete only their reviews. 
+## Description
+Ruby on Rails application utilizing MVC structure and CRUD functionality for recipe storage and leaving reviews. 
 
-<h2>Tech Stack</h2>
+## Functionality
 
- -  Ruby
- -  Rails 
- -  SQLite
+### Users:
+-	Create accounts and sign in, and can also login with Github authorized through OmniAuth, authenticated through BCrypt. 
+-	User index page displays a list of all users that link to individual profile pages, which display the recipes and reviews they created
+
+### Recipes: 
+-	Users create recipes that can be viewed by other users
+-	Users can edit and delete only the recipes they created  
+-	Recipe index page contains list of all recipes with options to filter by ingredient or user, and  sort by date, number of ingredients, and number of reviews 
+-	Individual recipe show pages display a recipe’s ingredients, instructions, and reviews 
+
+### Reviews: 
+-	Users can create recipe reviews at the review index page nested under the recipe 
+-	Users can edit and delete only their own reviews 
+
+## Relationships <a id="rel"></a>
+##### [Back to Top](#top)
+### User
+```has_many :recipes```
+```has_many :reviews```
+### Recipe
+```has_many :recipe_ingredients```
+```has_many :ingredients, through: :recipe_ingredients```
+### Ingredient
+```belongs_to :user```
+```has_many :recipe_ingredients```
+```has_many :recipes, through: :recipe_ingredients```
+### RecipeIngredient
+```belongs_to :recipe```
+```belongs_to :ingredient```
+### Review
+```belongs_to :recipe```
+```belongs_to :user```
+
+## Tech Stack
+ - Ruby
+ - Rails
+ - SQLite
+ - Active Record
+ - OmniAuth
  - BCrypt
- - OmniAuth 
- - HTML and CSS</ul>
+ - HTML and CSS 
 
-## Install Instructions
-
-To use this app, please follow these steps:
-
- -  Clone and cd cookbook
- -  run 'bundle install'
+## Instructions 
+ - Clone and cd repo
  -  run 'rails db:migrate'
  -  run 'rails s' to start the server
  -  Enter localhost:3000 in the browser
-
-
 
 ## Contributing
 
