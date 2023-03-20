@@ -1,7 +1,7 @@
 # Cookbook
 
 ## Description
-Ruby on Rails application utilizing MVC structure and CRUD functionality for recipe storage and leaving reviews. 
+Ruby on Rails application utilizing MVC structure and CRUD functionality for storing recipes and leaving reviews. 
 
 ## Functionality
 
