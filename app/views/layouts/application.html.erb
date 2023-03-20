@@ -9,36 +9,34 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-
   <header class="header">
     <h1>The Cookbook</h1>
+    <footer class="footer">
+      <nav>
+        <%= link_to "Home", root_path %> 
+        <%= link_to "All Recipes", recipes_path %> 
+        <%= link_to "All Users", users_path %>
+        <% if !current_user %>
+          <%= link_to "Sign Up", new_user_path %>
+          <%= link_to "Login", login_path %>
+        <% else %>
+          <%= link_to "Add Recipe", new_recipe_path %>
+          <%= link_to "Your Page", user_path(current_user) %>
+          <%= link_to "Log Out", logout_path, method: "post" %>
+        <% end %>
+      </nav>
+    </footer>
     <img src ="https://images.squarespace-cdn.com/content/v1/518ea9e4e4b0eb1ecff22776/1480450074024-LTJO255BUA2ODWGZDNJI/Quality+Ingredients?format=1500w">
   </header>
-  
-  <div class="alert">
-    <% if flash[:alert] %>
-      <button>
-      <%= flash[:alert] %>
-      </button>
-    <% end %>
-  </div>
-
-  <%= yield %>
-
-  <footer class="footer">
-    <nav>
-      <%= link_to "Home", root_path %> 
-      <%= link_to "All Recipes", recipes_path %> 
-      <%= link_to "All Users", users_path %>
-      <% if !current_user %>
-        <%= link_to "Sign Up", new_user_path %>
-        <%= link_to "Login", login_path %>
-      <% else %>
-        <%= link_to "Add Recipe", new_recipe_path %>
-        <%= link_to "Your Page", user_path(current_user) %>
-        <%= link_to "Log Out", logout_path, method: "post" %>
+  <div class="container"
+    <div class="alert">
+      <% if flash[:alert] %>
+        <button>
+        <%= flash[:alert] %>
+        </button>
       <% end %>
-    </nav>
-  </footer>
+    </div>
+    </div>
+  <%= yield %>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <h3><%= link_to "Edit Recipe", edit_recipe_path %></h3>
 <% end %>
 
-<p>Desciption: <%= @recipe.description %></p>
+<p>Description: <%= @recipe.description %></p>
 <div class= "ingredients">
     <p>Ingredients:</p>
     <% @recipe.recipe_ingredients.each do |ri| %>

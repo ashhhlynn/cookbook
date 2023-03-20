@@ -4,8 +4,6 @@ belongs_to :recipe
 belongs_to :ingredient 
 
 validates :quantity, presence: true
-validates :recipe, presence: true 
-validates :ingredient, presence: true 
 validates :quantity, length: { maximum: 50 }
 
 def ingredient_attributes=(ingredient_attributes)

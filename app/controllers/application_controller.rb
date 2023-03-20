@@ -25,9 +25,9 @@ def user_ownership
 end 
 
 def recipe_exists
-    if Recipe.find_by(id: params[:id]) == nil
+    if Recipe.find_by(id: params[:id]) == nil 
         flash[:alert] = "This recipe doesn't exist!"
-        redirect_to recipes_path 
+        redirect_to recipes_path
     end 
 end 
 

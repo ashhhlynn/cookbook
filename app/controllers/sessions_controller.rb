@@ -10,7 +10,7 @@ def create
       u.password = SecureRandom.hex
     end
     session[:user_id] = user.id
-    redirect_to root_path
+    redirect_to recipes_path
   else      
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password]) 
