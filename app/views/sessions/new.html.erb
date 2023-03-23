@@ -1,8 +1,11 @@
 <%= form_for :session, url: login_path do |f| %>
+  <div class="mb-3">
+
   <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.label :password %>
   <%= f.password_field :password %>
   <%= f.submit %>
+  </div>
 <% end %>
 

@@ -1,9 +1,13 @@
-<h1> <%= @user.username %>'s Profile</h1>
+<center><h1> <%= @user.username %>'s Profile</h1>
 <h2>Recipes:</h2>
+<div class="recipe-index">
+
 <%= render :partial => "recipes/recipe", :collection => @user.recipes %>
+</div>
 
 <h2>Reviews:</h2>
 <%= render :partial => "reviews/review", :collection => @user.reviews %>
-<br><br>
+<br><br></center>
+
 
 

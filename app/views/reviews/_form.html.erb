@@ -1,4 +1,6 @@
 <%= form_for(@review) do |f| %>
+  <div class="mb-3">
+
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h3>
@@ -14,4 +16,5 @@
     <%= f.label :review %><br>
     <%= f.text_area :text %><br>
     <%= f.submit %>
+    </div>
 <% end %>

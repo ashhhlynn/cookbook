@@ -1,4 +1,5 @@
 <%= form_for :user, url: signup_path do |f| %>
+  <div class="mb-3">
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h3> 
@@ -19,4 +20,5 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <%= f.submit %>
+  </div>
 <% end %>

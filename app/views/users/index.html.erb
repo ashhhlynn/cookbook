@@ -1,6 +1,12 @@
-<h1>All Users </h1>
+<center><h1>All Users </h1><div>
+<div class="recipe-index">
 <% @users.each do |user| %>
+    <div class="card">
+  <div class="card-body">
     <h2><%= link_to user.username, user_path(user) %></h2>
     <h3>Member since <%= user.created_at.strftime("%m-%d-%y")%></h3>
     <h3><%= user.recipes.count %> recipes, <%= user.reviews.count %> reviews</h3>
+    </div>
+    </div>
 <% end %>
+</div></center>

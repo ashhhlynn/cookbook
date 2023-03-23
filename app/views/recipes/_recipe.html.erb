@@ -1,6 +1,12 @@
-<h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
-<img src= "<%= recipe.image_url %>"<br>
-<h3>Recipe By <%= link_to recipe.user.username, user_path(recipe.user) %>
-<%= recipe.created_at.strftime("%m-%d-%y") %></h3>
-<h3><%= link_to recipe.reviews.count, recipe_reviews_path(recipe) %> Reviews</h3>
-<h3><%= recipe.recipe_ingredients.count %> ingredients</h3>
+<div class="card" border="0px"><span class="border-0"></span>
+
+
+  <div class="card-body">
+    <img class="card-img-top" src= "<%= recipe.image_url %>">
+    <h4 class="card-title"><%= link_to recipe.name, recipe_path(recipe) %></h4>
+    <h5>Recipe By <%= link_to recipe.user.username, user_path(recipe.user) %>
+    <%= recipe.created_at.strftime("%m-%d-%y") %></h5>
+    <h5><%= link_to recipe.reviews.count, recipe_reviews_path(recipe) %> Reviews</h5>
+    <h5><%= recipe.recipe_ingredients.count %> ingredients</h5>
+    </div>
+</div>

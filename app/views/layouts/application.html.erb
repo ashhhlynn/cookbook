@@ -11,8 +11,9 @@
 <body>
   <header class="header">
     <h1>The Cookbook</h1>
-    <footer class="footer">
-      <nav>
+ 
+    <ul class="nav justify-content-center">
+   
         <%= link_to "Home", root_path %> 
         <%= link_to "All Recipes", recipes_path %> 
         <%= link_to "All Users", users_path %>
@@ -24,11 +25,13 @@
           <%= link_to "Your Page", user_path(current_user) %>
           <%= link_to "Log Out", logout_path, method: "post" %>
         <% end %>
-      </nav>
-    </footer>
-    <img src ="https://images.squarespace-cdn.com/content/v1/518ea9e4e4b0eb1ecff22776/1480450074024-LTJO255BUA2ODWGZDNJI/Quality+Ingredients?format=1500w">
+
+        <ul>
+  
   </header>
-  <div class="container"
+  <hr class="hr" />
+  <div class="container">
+
     <div class="alert">
       <% if flash[:alert] %>
         <button>
@@ -37,6 +40,6 @@
       <% end %>
     </div>
     </div>
-  <%= yield %>
+  <%= yield %><br>
 </body>
 </html>
