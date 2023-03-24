@@ -46,6 +46,7 @@ Ruby on Rails application utilizing MVC structure and CRUD functionality for sto
  - OmniAuth
  - BCrypt
  - HTML and CSS 
+ - Bootstrap
 
 ## Instructions 
  - Clone and cd repo
