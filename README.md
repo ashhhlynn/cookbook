@@ -28,6 +28,7 @@ Ruby on Rails application utilizing MVC structure and CRUD functionality for sha
 ```has_many :recipe_ingredients```
 ```has_many :ingredients, through: :recipe_ingredients```
 ```has_many :reviews```
+```belongs_to :reviews```
 ### Ingredient
 ```belongs_to :user```
 ```has_many :recipe_ingredients```
