@@ -48,7 +48,7 @@ Ruby on Rails application utilizing MVC structure and CRUD functionality for sha
  - OmniAuth
  - BCrypt
  - HTML and CSS 
- - Bootstrap
+ - Bootstrap 5
 
 ## Instructions 
  - Clone and cd repo
