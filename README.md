@@ -1,13 +1,13 @@
 # Cookbook
 
 ## Description
-Ruby on Rails application utilizing MVC structure and CRUD functionality for storing recipes and leaving reviews. 
+Ruby on Rails application utilizing MVC structure and CRUD functionality for sharing and reviewing recipes. 
 
 ## Functionality
 
 ### Users:
 -	Create accounts and sign in, and can also login with Github authorized through OmniAuth, authenticated through BCrypt. 
--	User index page displays a list of all users that link to individual profile pages, which display the recipes and reviews they created
+-	User index page displays a list of all users that link to individual profile pages, which display the recipes and reviews user created
 
 ### Recipes: 
 -	Users create recipes that can be viewed by other users
@@ -16,7 +16,7 @@ Ruby on Rails application utilizing MVC structure and CRUD functionality for sto
 -	Individual recipe show pages display a recipe’s ingredients, instructions, and reviews 
 
 ### Reviews: 
--	Users can create recipe reviews at the review index page nested under the recipe 
+-	Users can create recipe reviews at the review index page nested under recipe 
 -	Users can edit and delete only their own reviews 
 
 ## Relationships <a id="rel"></a>
@@ -27,6 +27,7 @@ Ruby on Rails application utilizing MVC structure and CRUD functionality for sto
 ### Recipe
 ```has_many :recipe_ingredients```
 ```has_many :ingredients, through: :recipe_ingredients```
+```has_many :reviews```
 ### Ingredient
 ```belongs_to :user```
 ```has_many :recipe_ingredients```
